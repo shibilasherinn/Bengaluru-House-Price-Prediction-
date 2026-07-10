@@ -34,13 +34,19 @@ Final dataset: 9,321 rows × 187 features (down from 13,320 rows × 9 raw column
 
 **Random Forest performed best.** Notably, XGBoost underperformed both linear models here — a genuine finding rather than a tuning failure. With 187 mostly sparse one-hot encoded location features, XGBoost's greedy tree splits overfit to noise more readily than Random Forest's bagged, decorrelated trees. This highlights that gradient boosting isn't universally superior — feature structure matters as much as model choice.
 
+![Model Comparison](model_comparison.png)
+
 ## Feature Importance (Random Forest)
 
 `total_sqft` dominates prediction (77% importance), followed by `bath`, `BHK`, `balcony`, and a handful of premium locations (Cunningham Road, Rajaji Nagar, Indira Nagar).
 
+![Feature Importance](feature_importance.png)
+
 ## Model Limitations
 
 The actual-vs-predicted plot shows strong performance for properties under ₹500 Lakhs, but degraded accuracy for ultra-luxury properties (₹2000+ Lakhs) — a direct result of their scarcity in the training data rather than a modeling flaw.
+
+![Actual vs Predicted](actual_vs_predicted.png)
 
 ## Tech Stack
 
@@ -52,8 +58,7 @@ Python, pandas, NumPy, scikit-learn, XGBoost, Matplotlib, Seaborn, Google Colab
 - `house_price_prediction.ipynb` — full notebook (EDA, cleaning, modeling, evaluation)
 - `actual_vs_predicted.png`, `feature_importance.png`, `model_comparison.png` — visualizations
 
-
-
+  
 ## Author
 
 **Shibila Sherin M**
